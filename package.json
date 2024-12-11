@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "start:dev": "tsx watch src/server.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:e2e": "vitest run --dir src/controllers"
   },
   "keywords": [],
   "author": "",
