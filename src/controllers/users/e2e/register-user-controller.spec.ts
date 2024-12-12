@@ -22,4 +22,13 @@ describe('Register e2e', () => {
       })
     expect(response.statusCode).toEqual(201)
   })
+
+  it('should not be able to register when any required property is missing', async () => {
+    const response = await request(app.server)
+      .post('/users')
+      .send({
+        name: 'Felipe',
+      })
+    expect(response.statusCode).toEqual(400)
+  })
 })
