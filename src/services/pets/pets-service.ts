@@ -3,7 +3,7 @@ import { Pet } from '@prisma/client'
 
 interface RegisterPetRequest {
   name: string
-  cep: number
+  cep: string
   age: string
   description: string
   energy: string

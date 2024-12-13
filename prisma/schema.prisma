@@ -46,7 +46,7 @@ model Pet {
   size        String
   energy      String
   environment String
-  cep         BigInt
+  cep         String
   org         Org    @relation(fields: [org_id], references: [id])
   org_id      String
 

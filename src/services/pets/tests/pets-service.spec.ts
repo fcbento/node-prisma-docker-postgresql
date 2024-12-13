@@ -16,7 +16,7 @@ describe('Register pet service', () => {
     
     const { pet } = await sut.execute({
       age: 'Small',
-      cep: 1231231,
+      cep: '08560250',
       description: 'A really nice cat',
       energy: 'Active',
       environment: 'All',

@@ -15,7 +15,7 @@ export class InMemoryPetsRepository implements PetsRepository {
     const pet: Pet = {
       id: randomUUID(),
       name: data.name,
-      cep: data.cep as bigint,
+      cep: data.cep,
       age: data.age,
       description: data.description,
       energy: data.energy,
