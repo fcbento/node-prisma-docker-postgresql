@@ -24,11 +24,13 @@
     "@fastify/jwt": "^9.0.1",
     "@prisma/client": "^6.0.1",
     "@types/bcryptjs": "^2.4.6",
+    "@types/got": "9.6.12",
     "bcryptjs": "^2.4.3",
     "D": "1.0.0",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",
     "fastify": "^5.1.0",
+    "got": "14.4.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
