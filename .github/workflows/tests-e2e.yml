@@ -34,7 +34,7 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - run: docker compose up
+      - run: docker compose up --detach
       
       - run: docker container ls
 

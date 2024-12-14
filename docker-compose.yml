@@ -5,10 +5,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: "db"
-      POSTGRES_HOST_AUTH_METHOD: "trust"
-      DATABASE_USER: postgres
-      DATABASE_PASS: 1234
-      DATABASE_HOST: localhost
-      DATABASE_PORT: 5432
-      DATABASE_NAME: findafriend
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: findafriend
