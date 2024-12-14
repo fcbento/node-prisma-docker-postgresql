@@ -24,7 +24,7 @@ export default <Environment>{
     
     const databaseURL = generateDatabaseURL(schema)
     process.env.DATABASE_URL = databaseURL
-    execSync('docker exec node-prisma-docker-postgresql-testing-1 npx prisma migrate deploy')
+    execSync('npx prisma migrate deploy')
 
     return {
       async teardown() {
