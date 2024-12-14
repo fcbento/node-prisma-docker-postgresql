@@ -39,5 +39,5 @@ jobs:
       - run: npm run test:e2e
         env:
           JWT_SECRET: testing
-          DATABASE_URL: "postgresql://postgres:1234@localhost:5432/findafriend?schema=public"
+          DATABASE_URL: "postgresql://postgres:1234@postgres:5432/findafriend?schema=public"
           
