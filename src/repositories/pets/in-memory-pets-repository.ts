@@ -21,7 +21,12 @@ export class InMemoryPetsRepository implements PetsRepository {
       energy: data.energy,
       environment: data.environment,
       org_id: data.org_id,
-      size: data.size
+      size: data.size,
+      bairro: data.bairro,
+      estado: data.estado,
+      localidade: data.localidade,
+      logradouro: data.logradouro,
+      uf: data.uf
     }
 
     this.pets.push(pet)
