@@ -4,7 +4,8 @@ on: [push]
 
 env:
   NODE_ENV: dev
-
+  DATABASE_URL: "postgresql://postgres:1234@localhost:5432/findafriend?schema=public"
+  
 jobs:
   run-unit-tests:
     name: Run Unit Tests
