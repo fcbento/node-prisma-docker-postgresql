@@ -27,12 +27,19 @@ model Org {
   id            String   @id @default(uuid())
   name          String
   email         String   @unique
-  cep           BigInt
+  cep           String
   whatsapp      String
   password_hash String
   role          Role     @default(ADMIN)
   created_at    DateTime @default(now())
-  Pet           Pet[]
+
+  logradouro String
+  bairro     String
+  localidade String
+  uf         String
+  estado     String
+
+  Pet Pet[]
 
   @@map("Orgs")
 }
@@ -47,8 +54,14 @@ model Pet {
   energy      String
   environment String
   cep         String
-  org         Org    @relation(fields: [org_id], references: [id])
-  org_id      String
+  logradouro  String
+  bairro      String
+  localidade  String
+  uf          String
+  estado      String
+
+  org    Org    @relation(fields: [org_id], references: [id])
+  org_id String
 
   PetRequirements PetRequirements[] @relation()
   PetPhotos       PetPhotos[]
