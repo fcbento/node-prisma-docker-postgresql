@@ -10,7 +10,7 @@ export async function registerOrg(request: FastifyRequest, reply: FastifyReply) 
     name: z.string(),
     email: z.string().email(),
     password: z.string().min(6),
-    cep: z.number(),
+    cep: z.string(),
     whatsapp: z.string()
   })
 

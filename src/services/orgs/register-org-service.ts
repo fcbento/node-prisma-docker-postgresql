@@ -1,14 +1,14 @@
 import { OrgsRepository } from "@/repositories/orgs/orgs-repository"
-import { UsersRepository } from "@/repositories/users/users-repository"
 import { Org } from "@prisma/client"
 import bcrypt from 'bcryptjs'
 import { OrgAlreadyExistsError } from "./errors/org-already-exists-error"
+import { getAddressByCep, AddressResponse } from "../cep/cep-api-service"
 
 interface RegisterOrgRequest {
   name: string
   email: string
   password: string
-  cep: number
+  cep: string
   whatsapp: string
 }
 
@@ -27,8 +27,19 @@ export class RegisterOrgService {
     if (orgWithSameEmail) {
       throw new OrgAlreadyExistsError()
     }
-
-    const org = await this.orgsRepository.create({ name, email, password_hash, cep, whatsapp })
+    const address = await getAddressByCep(cep) as AddressResponse
+    const org = await this.orgsRepository.create({ 
+      name,
+      email,
+      password_hash,
+      cep,
+      whatsapp,
+      bairro: address.bairro,
+      estado: address.estado,
+      localidade: address.localidade,
+      logradouro: address.logradouro,
+      uf: address.uf
+    })
     return { org }
   }
 }

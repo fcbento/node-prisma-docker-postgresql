@@ -21,12 +21,17 @@ export class InMemoryOrgsRepository implements OrgsRepository {
     const org: Org = {
       id: randomUUID(),
       name: data.name,
-      cep: data.cep as bigint,
+      cep: data.cep,
       email: data.email,
       password_hash: data.password_hash,
       whatsapp: data.whatsapp,
       created_at: new Date(),
-      role: data.role as Role
+      role: data.role as Role,
+      bairro: data.bairro,
+      estado: data.estado,
+      localidade: data.localidade,
+      logradouro: data.logradouro,
+      uf: data.uf
     }
 
     this.orgs.push(org)

@@ -4,7 +4,7 @@ import request from 'supertest'
 
 const orgRequest = {
   name: 'Test Org',
-  cep: 8560250,
+  cep: '08560250',
   email: 'org@test.com',
   password: '123456',
   whatsapp: '985672298'
@@ -20,7 +20,7 @@ describe('Auth e2e', () => {
     await app.close()
   })
 
-  it('should not be able to authenticate', async () => {
+  it('should be able to authenticate', async () => {
     
     await request(app.server)
       .post('/orgs')
@@ -38,6 +38,7 @@ describe('Auth e2e', () => {
       token: expect.any(String)
     })
   })
+  
   it('should not be able to authenticate', async () => {
     
     await request(app.server)
