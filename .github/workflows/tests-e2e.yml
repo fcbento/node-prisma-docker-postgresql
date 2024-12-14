@@ -34,6 +34,8 @@ jobs:
           node-version: 18
           cache: 'npm'
 
+      - run: docker container ls
+
       - run: npm ci
 
       - run: npm run test:e2e
