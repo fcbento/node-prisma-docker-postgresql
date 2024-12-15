@@ -61,7 +61,7 @@ $ npm run test:e2e
 
 ### DB Schema
 
-[![DB]](schema_db.png)
+<img alt="example" width="800" src="schema_db.png">
 
 ## Built With
 
