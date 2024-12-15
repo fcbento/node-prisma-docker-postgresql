@@ -1,4 +1,4 @@
-import { Prisma, Role, Pet, Org } from "@prisma/client";
+import { Prisma, Pet } from "@prisma/client";
 import { randomUUID } from "node:crypto";
 import { PetsRepository } from "./prisma-pets-repository";
 
@@ -32,6 +32,11 @@ export class InMemoryPetsRepository implements PetsRepository {
     this.pets.push(pet)
     
     return pet
+  }
+
+  async listPetsByCity(city: string): Promise<Pet[]> {
+    const pets = this.pets.filter(pet => pet.localidade.toLowerCase() === city.toLowerCase())
+    return pets
   }
 
 }
