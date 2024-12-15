@@ -67,7 +67,7 @@ $ npm run test:e2e
 
 This was created with the following tech stack. I intend to create a front end using Angular with Nx.
 
-[![My Skills](https://skillicons.dev/icons?i=nodejs,typescript,docker,prisma,postgres,vscode,githubactions&perline=3)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=nodejs,typescript,docker,prisma,postgres,vscode,vitest,windows,githubactions&perline=10)](https://skillicons.dev)
 
 #### To come
 [![My Skills](https://skillicons.dev/icons?i=angular,rxjs,firebase&perline=3)](https://skillicons.dev)
