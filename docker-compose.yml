@@ -1,10 +1,11 @@
 version: '3'
 services:
-  api-solid-pg:
-    image: bitnami/postgresql
+  testing:
+    image: postgres
     ports:
       - 5432:5432
     environment:
-      - POSTGRESQL_USERNAME=postgres
-      - POSTGRESQL_PASSWORD=1234
-      - POSTGRESQL_DATABASE=findafriend
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: findafriend

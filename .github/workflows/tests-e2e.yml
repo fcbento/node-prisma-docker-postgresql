@@ -1,0 +1,47 @@
+name: Run E2E Tests
+
+on: [push]
+
+jobs:
+  run-e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          DATABASE_USER: postgres
+          DATABASE_PASS: 1234
+          DATABASE_HOST: localhost
+          DATABASE_PORT: 5432
+          DATABASE_NAME: findafriend
+
+    steps:
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - run: docker compose up --detach
+      
+      - run: docker container ls
+
+      - run: npm ci
+
+      - run: npm run test:e2e
+        env:
+          JWT_SECRET: testing
+          DATABASE_URL: "postgresql://postgres:1234@0.0.0.0:5432/findafriend?schema=public"
+          
