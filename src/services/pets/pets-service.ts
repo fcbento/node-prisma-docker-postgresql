@@ -1,6 +1,7 @@
 import { PetsRepository } from '@/repositories/pets/prisma-pets-repository'
 import { Pet } from '@prisma/client'
 import { AddressResponse, getAddressByCep } from '../cep/cep-api-service'
+import { RegisterPetPhotosFacotry } from '../pet-photos/factories/register-pet-photos-factory';
 
 interface RegisterPetRequest {
   name: string
@@ -11,6 +12,7 @@ interface RegisterPetRequest {
   environment: string
   org_id: string
   size: string
+  photos: string[]
 }
 
 interface RegisterPetResponse {
@@ -18,10 +20,12 @@ interface RegisterPetResponse {
 }
 
 export class RegisterPetService {
+  public registerPetPhotosService = RegisterPetPhotosFacotry()
+  constructor(
+    private petsRepository: PetsRepository
+  ) { }
 
-  constructor(private petsRepository: PetsRepository) { }
-
-  async execute({ name, cep, age, description, energy, environment, org_id, size }: RegisterPetRequest): Promise<RegisterPetResponse> {
+  async execute({ name, cep, age, description, energy, environment, org_id, size, photos }: RegisterPetRequest): Promise<RegisterPetResponse> {
     const address = await getAddressByCep(cep) as AddressResponse
     const pet = await this.petsRepository.create({
       name,
@@ -38,10 +42,9 @@ export class RegisterPetService {
       logradouro: address.logradouro,
       uf: address.uf
     })
-    
-    //save photos passing id created and requirements
-    if(pet.id) {
 
+    for await (const photo of photos) {
+      await this.registerPetPhotosService.execute({ pet_id: pet.id, photo })
     }
     return { pet }
   }

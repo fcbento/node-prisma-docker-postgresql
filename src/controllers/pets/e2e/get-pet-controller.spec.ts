@@ -48,12 +48,11 @@ describe('Get pet by id', () => {
         bairro: petAddress.bairro,
         estado: petAddress.estado,
         logradouro: petAddress.logradouro,
-        uf: petAddress.uf,
+        uf: petAddress.uf
       }
     })
 
     const response = await request(app.server).get(`/pets/single/${pet.id}`)
-
     expect(response.body.pet).toEqual(expect.objectContaining({
       localidade: expect.any(String)
     }))

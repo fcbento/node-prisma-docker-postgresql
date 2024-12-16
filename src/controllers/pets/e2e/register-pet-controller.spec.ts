@@ -41,7 +41,8 @@ describe('Register PET e2e', () => {
         energy: 'Lots of energy',
         environment: 'All',
         org_id: org.id,
-        size: 'Small'
+        size: 'Small',
+        photos: ['somephoto.png', 'secondphoto.png']
       })
 
     expect(response.body.pet).toEqual(expect.objectContaining({
