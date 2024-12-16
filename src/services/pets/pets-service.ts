@@ -38,6 +38,11 @@ export class RegisterPetService {
       logradouro: address.logradouro,
       uf: address.uf
     })
+    
+    //save photos passing id created and requirements
+    if(pet.id) {
+
+    }
     return { pet }
   }
 }
