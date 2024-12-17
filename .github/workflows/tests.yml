@@ -21,8 +21,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npx vitest --coverage.enabled true
-
+      - run: npm run test
+      
       - name: Vitest Coverage Report
         uses: davelosert/vitest-coverage-report-action@v2.8.0
             
