@@ -1,6 +1,6 @@
-import { Prisma, Pet, PetPhotos } from "@prisma/client";
-import { PetPhotosRepository } from "./prisma-pet-photos-repository";
+import { Prisma, PetPhotos } from "@prisma/client";
 import { randomUUID } from "crypto";
+import { PetPhotosRepository } from "./pet-photos-repository";
 
 export class InMemoryPetPhotosRepository implements PetPhotosRepository {
   public photos: PetPhotos[] = []

@@ -1,4 +1,4 @@
-import { PrismaPetPhotosRepository } from "@/repositories/photos/pet-photos-repository"
+import { PrismaPetPhotosRepository } from "@/repositories/photos/prisma-pet-photos-repository"
 import { GetPetPhotosService } from "../get-pet-photos-service"
 
 export function GetPetPhotosFacotry(){
