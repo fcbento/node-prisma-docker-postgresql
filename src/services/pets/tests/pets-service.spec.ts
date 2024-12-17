@@ -23,7 +23,8 @@ describe('Register pet service', () => {
       name: 'Harry',
       org_id: '1',
       size: 'Big',
-      photos: []
+      photos: [],
+      requirements: []
     })
 
     expect(pet.id).toEqual(expect.any(String))

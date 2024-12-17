@@ -42,9 +42,10 @@ describe('Register PET e2e', () => {
         environment: 'All',
         org_id: org.id,
         size: 'Small',
-        photos: ['somephoto.png', 'secondphoto.png']
+        photos: ['somephoto.png', 'secondphoto.png'],
+        requirements: ['live closely', 'sleep a lot']
       })
-
+      
     expect(response.body.pet).toEqual(expect.objectContaining({
       localidade: expect.any(String)
     }))

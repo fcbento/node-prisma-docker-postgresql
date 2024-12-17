@@ -14,13 +14,14 @@ export async function registerPet(request: FastifyRequest, reply: FastifyReply) 
     environment: z.string(),
     org_id: z.string(),
     size: z.string(),
-    photos: z.array(z.string())
+    photos: z.array(z.string()),
+    requirements: z.array(z.string())
   })
 
-  const { name, age, cep, description, energy, environment, org_id, size, photos } = registerBodySchema.parse(request.body)
+  const { name, age, cep, description, energy, environment, org_id, size, photos, requirements } = registerBodySchema.parse(request.body)
   try {
     const registerService = RegisterPetFacotry()
-    const pet = await registerService.execute({ name, age, cep, description, energy, environment, org_id, size, photos })
+    const pet = await registerService.execute({ name, age, cep, description, energy, environment, org_id, size, photos, requirements })
     return reply.status(201).send(pet)
   } catch (err) {
     if (err instanceof UserAlreadyExistsError) {
