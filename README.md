@@ -59,6 +59,17 @@ $ npm run test:e2e
 - [ ] All filters, except for the city, are optional  
 - [x] For an ORG to access the application as an admin, it must be logged in  
 
+### Tests Coverage
+
+| Metric       | Coverage | Covered | Total |
+|--------------|----------|---------|-------|
+| Statements   | 97.25%   | 248     | 255   |
+| Branches     | 98.46%   | 64      | 65    |
+| Functions    | 95.12%   | 39      | 41    |
+| Lines        | 97.25%   | 248     | 255   |
+
+<img alt="example" width="800" src="coverage-services.png">
+
 ### DB Schema
 
 <img alt="example" width="800" src="schema_db.png">

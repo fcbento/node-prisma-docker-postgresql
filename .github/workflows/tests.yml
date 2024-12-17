@@ -22,7 +22,3 @@ jobs:
       - run: npm ci
 
       - run: npm run test
-      
-      - name: Vitest Coverage Report
-        uses: davelosert/vitest-coverage-report-action@v2.8.0
-            
