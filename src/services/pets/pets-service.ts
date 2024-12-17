@@ -43,9 +43,10 @@ export class RegisterPetService {
       uf: address.uf
     })
 
-    for await (const photo of photos) {
-      await this.registerPetPhotosService.execute({ pet_id: pet.id, photo })
-    }
+    if(photos.length)
+      for await (const photo of photos) {
+        await this.registerPetPhotosService.execute({ pet_id: pet.id, photo })
+      }
     return { pet }
   }
 }

@@ -25,7 +25,8 @@ describe('List pets service', () => {
       environment: 'All',
       name: 'Harry',
       org_id: '1',
-      size: 'Big'
+      size: 'Big',
+      photos: []
     })
 
     await registerPetService.execute({
@@ -36,7 +37,8 @@ describe('List pets service', () => {
       environment: 'All',
       name: 'Harry',
       org_id: '1',
-      size: 'Big'
+      size: 'Big',
+      photos: []
     })
 
     const response = await sut.execute({ city: 'Piracicaba' })
