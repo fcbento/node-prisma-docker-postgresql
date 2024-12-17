@@ -1,6 +1,5 @@
 import { InMemoryPetPhotosRepository } from "@/repositories/photos/in-memory-pet-photos-repository"
 import { describe, expect, it } from "vitest"
-import { RegisterPetPhotoService } from "../register-pet-photos-service"
 import { GetPetPhotosService } from "../get-pet-photos-service"
 
 let petsRepository: InMemoryPetPhotosRepository

@@ -2,8 +2,9 @@ import { InMemoryPetsRepository } from "@/repositories/pets/in-memory-pets-repos
 import { beforeEach, describe, expect, it } from "vitest";
 import { ListPetService } from "../list-pets-service";
 import { RegisterPetService } from "../pets-service";
+import { PetsRepository } from "@/repositories/pets/prisma-pets-repository";
 
-let petsRepository: InMemoryPetsRepository
+let petsRepository: PetsRepository
 let sut: ListPetService
 let sutRegister: RegisterPetService
 

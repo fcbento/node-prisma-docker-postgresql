@@ -9,7 +9,7 @@ let sut: RegisterOrgService
 
 const request = {
   name: 'Test Org',
-  cep: 8560250,
+  cep: '8560250',
   email: 'org@test.com',
   password: '123456',
   whatsapp: '985672298'

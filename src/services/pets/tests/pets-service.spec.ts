@@ -1,8 +1,9 @@
 import { InMemoryPetsRepository } from "@/repositories/pets/in-memory-pets-repository"
 import { describe, beforeEach, it, expect } from "vitest"
 import { RegisterPetService } from "../pets-service"
+import { PetsRepository } from "@/repositories/pets/prisma-pets-repository"
 
-let petsRepository: InMemoryPetsRepository
+let petsRepository: PetsRepository
 let sut: RegisterPetService
 
 describe('Register pet service', () => {
