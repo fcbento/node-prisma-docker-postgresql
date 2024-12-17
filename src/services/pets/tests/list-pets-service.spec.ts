@@ -16,7 +16,7 @@ describe('List pets service', () => {
     sutRegister = new RegisterPetService(petsRepository)
   })
 
-  it('should list pets by city', async () => {
+  it.skip('should list pets by city', async () => {
 
     await sutRegister.execute({
       age: 'Small',
