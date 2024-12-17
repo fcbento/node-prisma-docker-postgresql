@@ -10,7 +10,7 @@ jobs:
   run-unit-tests:
     name: Run Unit Tests
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v3
 
@@ -21,4 +21,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test:coverage
+      - run: npx vitest --coverage.enabled true
+
+      - name: Vitest Coverage Report
+        uses: davelosert/vitest-coverage-report-action@v2.8.0
+            
