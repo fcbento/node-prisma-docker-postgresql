@@ -5,19 +5,19 @@ import { RegisterPetService } from "../pets-service";
 
 let petsRepository: InMemoryPetsRepository
 let sut: ListPetService
-let registerPetService: RegisterPetService
+let sutRegister: RegisterPetService
 
 describe('List pets service', () => {
 
   beforeEach(() => {
     petsRepository = new InMemoryPetsRepository()
     sut = new ListPetService(petsRepository)
-    registerPetService = new RegisterPetService(petsRepository)
+    sutRegister = new RegisterPetService(petsRepository)
   })
 
   it('should list pets by city', async () => {
 
-    await registerPetService.execute({
+    await sutRegister.execute({
       age: 'Small',
       cep: '13423790',
       description: 'A really nice cat',
@@ -30,7 +30,7 @@ describe('List pets service', () => {
       requirements: []
     })
 
-    await registerPetService.execute({
+    await sutRegister.execute({
       age: 'Small',
       cep: '08560250',
       description: 'A really nice cat',
