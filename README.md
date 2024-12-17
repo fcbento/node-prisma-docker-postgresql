@@ -74,6 +74,16 @@ $ npm run test:e2e
 
 <img alt="example" width="800" src="schema_db.png">
 
+### TODO
+
+- [ ] Fix mixed language fields. Currently some fields of the PET and ORG tables are mixed using both Portuguese and English.
+- [ ] Validate empty id in routes that the id is passed as an arugment and ideally return a friendly error message
+- [ ] Validate if org_id is a valid id when registering a new pet
+- [ ] Validate if pet_id is a valid id when registering either a new photo or a new requirement
+- [ ] Check if it's possible to use a global zip postal code to populate fields ragarding the address of pet and org. Currently the zip code service (cep-api-service.ts) only works for zip codes in Brazil. I tried to use Zipcodestack, but the requisition was too slow.
+- [ ] Add swagger/openapi
+- [ ] Create CD and publish to some free hosting service
+ 
 ## Built With
 
 This was created with the following tech stack. I intend to create a front end using Angular with Nx.
