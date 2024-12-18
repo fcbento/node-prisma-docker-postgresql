@@ -52,7 +52,7 @@ describe('List pets e2e', () => {
       }
     })
 
-    const response = await request(app.server).get('/pets/Piracicaba')
+    const response = await request(app.server).get('/pets?city=Piracicaba')
 
     expect(response.body.pets).toHaveLength(1)
     expect(response.statusCode).toEqual(200)

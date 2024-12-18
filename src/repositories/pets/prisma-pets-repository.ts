@@ -20,10 +20,13 @@ export class PrismaPetsRepository implements PetsRepository {
     return pet
   }
 
-  async listPetsByCity(city: string): Promise<Pet[]> {
+  async listPetsByCity(city: string, age?: string, energy?: string, size?: string): Promise<Pet[]> {
     const pets = await prisma.pet.findMany({
       where: {
-        localidade: city
+        localidade: city,
+        age,
+        energy,
+        size
       }
     })
     return pets

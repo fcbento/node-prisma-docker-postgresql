@@ -5,6 +5,6 @@ import { getPetById } from "./get-pet-controller";
 
 export async function petRoutes(app: FastifyInstance) {
   app.post('/pets', registerPet)
-  app.get('/pets/:city', listPet)
+  app.get('/pets', listPet)
   app.get('/pets/single/:id', getPetById)
 }
