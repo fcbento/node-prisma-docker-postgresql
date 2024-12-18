@@ -1,4 +1,4 @@
-import { PrismaPetsRepository } from "@/repositories/pets/pets-repository"
+import { PrismaPetsRepository } from "@/repositories/pets/prisma-pets-repository"
 import { GetPetService } from "../get-pet-service"
 
 export function GetPetFacotry(){

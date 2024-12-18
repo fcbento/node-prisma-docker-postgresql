@@ -1,5 +1,5 @@
+import { PrismaPetsRepository } from "@/repositories/pets/prisma-pets-repository";
 import { RegisterPetService } from "../pets-service";
-import { PrismaPetsRepository } from "@/repositories/pets/pets-repository";
 
 export function RegisterPetFacotry(){
   const petsRepository = new PrismaPetsRepository()
